@@ -50,15 +50,20 @@
     </build>
 
     <repositories>
+        <!-- CÁC KHO CHỨA ĐÁNG TIN CẬY -->
         <repository>
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-        <!-- Chỉ cần JitPack là đủ cho giải pháp này -->
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+        <!-- KHO CHỨA JITPACK.IO ĐÃ BỊ XÓA -->
     </repositories>
 
     <dependencies>
@@ -69,12 +74,12 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ĐÂY LÀ PHẦN ĐÃ ĐƯỢC SỬA TRIỆT ĐỂ -->
+        <!-- SỬ DỤNG TỌA ĐỘ VAULT CHÍNH THỨC -->
         <dependency>
-            <groupId>com.github.MilkDev</groupId>
+            <groupId>net.milkbowl.vault</groupId>
             <artifactId>Vault</artifactId>
             <version>1.7.3</version>
-            <!-- DÒNG <scope>provided</scope> ĐÃ BỊ XÓA ĐI -->
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
