@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Thông tin dự án của bạn -->
     <groupId>vn.been</groupId>
     <artifactId>chimcanh</artifactId>
     <version>1.0.0</version>
@@ -19,7 +18,6 @@
 
     <build>
         <plugins>
-            <!-- Plugin để biên dịch code Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -29,7 +27,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <!-- Plugin để đóng gói tất cả thành một file .jar duy nhất -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -53,17 +50,15 @@
     </build>
 
     <repositories>
-        <!-- Kho chứa của PaperMC -->
         <repository>
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-        <!-- Kho chứa chung -->
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-        <!-- Kho chứa cho Vault API -->
+        <!-- Kho chứa JitPack vẫn cần thiết cho Vault -->
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
@@ -71,18 +66,18 @@
     </repositories>
 
     <dependencies>
-        <!-- Thư viện API của Paper cho Minecraft 1.21 -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Thư viện API của Vault để xử lý tiền tệ -->
+
+        <!-- ĐÂY LÀ PHẦN ĐÃ ĐƯỢC SỬA -->
         <dependency>
-            <groupId>com.github.MilkPlugins</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.7</version>
+            <groupId>com.github.MilkDev</groupId>
+            <artifactId>Vault</artifactId>
+            <version>1.7.3</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
