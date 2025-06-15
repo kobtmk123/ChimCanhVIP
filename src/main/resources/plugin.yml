@@ -1,0 +1,12 @@
+name: ChimCanhVIP
+version: '${project.version}'
+main: vn.been.chimcanh.ChimCanhVIP
+api-version: '1.21'
+authors: [Been]
+description: Hệ thống nuôi chim cảnh và thách đấu.
+depend: [Vault] # Khai báo rằng plugin này cần có Vault để chạy
+
+commands:
+  chimcanh:
+    description: Lệnh chính của ChimCanhVIP.
+    aliases: [chim, cc]
