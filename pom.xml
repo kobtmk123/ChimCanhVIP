@@ -58,7 +58,11 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-        <!-- Kho chứa JitPack vẫn cần thiết cho Vault -->
+        <!-- KHO CHỨA MỚI ĐỂ SỬA LỖI -->
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
@@ -73,7 +77,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ĐÂY LÀ PHẦN ĐÃ ĐƯỢC SỬA -->
+        <!-- Thư viện Vault không thay đổi, nhưng giờ Maven có thể tìm thấy nó ở CodeMC -->
         <dependency>
             <groupId>com.github.MilkDev</groupId>
             <artifactId>Vault</artifactId>
