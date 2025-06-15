@@ -72,10 +72,10 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ĐÂY LÀ PHẦN ĐÃ ĐƯỢC SỬA LẠI HOÀN TOÀN -->
+        <!-- ĐÂY LÀ PHẦN ĐÃ ĐƯỢC SỬA TÊN ARTIFACTID -->
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
-            <artifactId>VaultAPI</artifactId>
+            <artifactId>Vault</artifactId>
             <version>1.7.1</version>
             <scope>provided</scope>
         </dependency>
