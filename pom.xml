@@ -50,18 +50,20 @@
     </build>
 
     <repositories>
-        <!-- CÁC KHO CHỨA ĐÁNG TIN CẬY -->
+        <!-- Kho chứa cho Paper API -->
         <repository>
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
+        <!-- KHO CHỨA CHÍNH THỨC CỦA VAULT - ĐÂY LÀ CHÌA KHÓA -->
         <repository>
-            <id>codemc-repo</id>
-            <url>https://repo.codemc.io/repository/maven-public/</url>
+            <id>vault-repo</id>
+            <url>https://ci.ender.zone/plugin/repository/everything/</url>
         </repository>
     </repositories>
 
     <dependencies>
+        <!-- Thư viện Paper API -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -69,11 +71,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ĐÂY LÀ KHAI BÁO VAULT ĐÚNG 100% -->
+        <!-- Khai báo Vault API đúng -->
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.7.1</version>
+            <version>1.7</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
