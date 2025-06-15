@@ -56,14 +56,9 @@
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-        <repository>
             <id>codemc-repo</id>
             <url>https://repo.codemc.io/repository/maven-public/</url>
         </repository>
-        <!-- KHO CHỨA JITPACK.IO ĐÃ BỊ XÓA -->
     </repositories>
 
     <dependencies>
@@ -74,11 +69,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- SỬ DỤNG TỌA ĐỘ VAULT CHÍNH THỨC -->
+        <!-- ĐÂY LÀ KHAI BÁO VAULT ĐÚNG 100% -->
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
-            <artifactId>Vault</artifactId>
-            <version>1.7.3</version>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
