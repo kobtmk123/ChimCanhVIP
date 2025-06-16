@@ -1,0 +1,70 @@
+# Cài đặt chính cho plugin ChimCanhVIP
+# Bạn có thể chỉnh sửa tất cả các giá trị ở đây sau khi plugin chạy.
+# Dùng lệnh /chimcanh reload để áp dụng thay đổi mà không cần khởi động lại server.
+
+# Tin nhắn của plugin
+# Bạn có thể dùng mã màu với ký tự '&'. Ví dụ: &a, &b, &l, &o
+messages:
+  prefix: "&e&l[ChimCanh] &r"
+  reload: "&aĐã tải lại cấu hình ChimCanhVIP!"
+  no_permission: "&cBạn không có quyền dùng lệnh này."
+  player_not_found: "&cKhông tìm thấy người chơi này hoặc họ không online."
+  challenge_sent: "&aĐã gửi lời mời thách đấu tới &e{target}&a. Họ có 60 giây để chấp nhận."
+  challenge_received: "&e{challenger} &amuốn thách đấu chim với bạn! Dùng &e/chim okchim &ahoặc &e/chim tuchoi&a."
+  challenge_accepted: "&a{target} đã chấp nhận lời thách đấu! Trận đấu bắt đầu!"
+  challenge_denied: "&c{target} đã từ chối lời thách đấu."
+  challenge_expired: "&cLời mời thách đấu tới &e{target} &cđã hết hạn."
+  challenge_self: "&cBạn không thể thách đấu chính mình!"
+  not_in_challenge: "&cBạn không ở trong một trận thách đấu nào."
+  already_in_challenge: "&cBạn hoặc người chơi kia đã ở trong một trận đấu."
+  not_warrior: "&cChỉ có Vẹt Chiến Binh mới có thể tham gia thách đấu!"
+  parrot_tamed: "&aBạn đã thuần hóa một chú vẹt! Hãy chăm sóc nó thật tốt để trở thành Chiến Binh!"
+  warrior_achieved: "&e&l{player} đã huấn luyện thành công chiến binh của mình!"
+  challenge_win_title: "&6&lWINNER" # Tiêu đề lớn trên màn hình
+  challenge_win_chat: "&e&lVẹt Chiến Binh của {player} đã chiến thắng và nhận được &6{amount}$!"
+  challenge_lose_chat: "&c&lVẹt của {player} đã thua cuộc và bị hạ một cấp!"
+
+# Cấu hình cấp độ cho vẹt
+# ID (NON, BOI_THUONG,...) phải giữ nguyên. Các giá trị khác có thể tùy chỉnh.
+levels:
+  # Cấp 1: Vẹt Non
+  NON:
+    display_name: "&fVẹt Non"
+    next_level: "BOI_THUONG"
+    seeds_to_level_up: 30
+  # Cấp 2: Vẹt Bổi Thường
+  BOI_THUONG:
+    display_name: "&fVẹt Bổi Thường"
+    next_level: "BOI_GIA"
+    seeds_to_level_up: 70
+  # Cấp 3: Vẹt Bổi Già
+  BOI_GIA:
+    display_name: "&fVẹt Bổi Già"
+    next_level: "CHIEN_BINH"
+    seeds_to_level_up: 220
+  # Cấp 4: Vẹt Chiến Binh (cấp cuối)
+  CHIEN_BINH:
+    display_name: "&6&lVẹt Chiến Binh"
+    next_level: null # Để là null hoặc bỏ trống để báo đây là cấp cuối
+    seeds_to_level_up: 0
+
+# Cấu hình thời gian thuần hóa để xác định cấp độ ban đầu
+# Thời gian tính bằng phút kể từ khi vẹt được thuần hóa.
+# Plugin sẽ không dùng cái này để xác định cấp độ ban đầu, logic này quá phức tạp và dễ lỗi.
+# Thay vào đó, mọi vẹt khi thuần hóa sẽ bắt đầu từ cấp NON.
+# Phần này để lại để tham khảo.
+taming_time:
+  non_max_minutes: 15
+  boi_thuong_max_minutes: 40
+  boi_gia_max_minutes: 120
+
+# Cấu hình tắm
+bathing:
+  cooldown_days: 4 # Số ngày trong game phải chờ để tắm lại
+  speed_boost_duration_seconds: 300 # Thời gian hiệu ứng speed (5 phút)
+  speed_boost_amplifier: 1 # Cấp độ hiệu ứng Speed (1 tương ứng với Speed II)
+
+# Cấu hình thách đấu
+challenge:
+  duration_seconds: 60 # Thời gian của một trận thách đấu
+  win_reward_money: 400000.0 # Phần thưởng tiền cho người thắng
