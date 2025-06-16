@@ -1,5 +1,7 @@
 package vn.been.chimcanh.listeners;
 
+// --- CÁC DÒNG IMPORT ĐÃ ĐƯỢC THÊM VÀO ---
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Parrot;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,6 +14,8 @@ import vn.been.chimcanh.ChimCanhVIP;
 import vn.been.chimcanh.data.ParrotData;
 import vn.been.chimcanh.manager.ItemManager;
 import vn.been.chimcanh.manager.PlayerDataManager;
+import vn.been.chimcanh.model.ParrotLevel;
+// ----------------------------------------
 
 public class PlayerListener implements Listener {
     private final ChimCanhVIP plugin;
@@ -27,7 +31,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         // Tải dữ liệu của người chơi vào cache khi họ tham gia
-        dataManager.getPlayerData(event.getPlayer());
+        dataManager.loadPlayerData(event.getPlayer());
     }
 
     @EventHandler
@@ -46,9 +50,9 @@ public class PlayerListener implements Listener {
 
         // Kiểm tra xem có phải là hạt giống của plugin không
         if (!itemManager.isCustomSeed(itemInHand)) return;
-        
+
         // Ngăn hành động mặc định (ví dụ: thuần hóa bằng hạt thường)
-        event.setCancelled(true); 
+        event.setCancelled(true);
 
         ParrotData parrotData = dataManager.getParrotData(parrot.getUniqueId());
         // Nếu vẹt không thuộc plugin hoặc người chơi không phải chủ, không cho ăn
@@ -63,7 +67,7 @@ public class PlayerListener implements Listener {
 
         // Trừ 1 item khỏi tay người chơi
         itemInHand.setAmount(itemInHand.getAmount() - 1);
-        
+
         if (leveledUp) {
             // Gửi thông báo lên cấp, v.v.
             player.sendMessage(ChatColor.GREEN + "Vẹt của bạn đã lên cấp thành " + parrotData.getLevel().getDisplayName());

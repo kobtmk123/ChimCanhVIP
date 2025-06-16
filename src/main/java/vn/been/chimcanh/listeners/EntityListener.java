@@ -1,6 +1,7 @@
 package vn.been.chimcanh.listeners;
 
-import org.bukkit.entity.Entity;
+// --- CÁC DÒNG IMPORT ĐÃ ĐƯỢC THÊM VÀO ---
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Parrot;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,6 +11,7 @@ import org.bukkit.event.entity.EntityTameEvent;
 import vn.been.chimcanh.ChimCanhVIP;
 import vn.been.chimcanh.data.ParrotData;
 import vn.been.chimcanh.manager.PlayerDataManager;
+// ----------------------------------------
 
 public class EntityListener implements Listener {
 
@@ -31,10 +33,10 @@ public class EntityListener implements Listener {
 
         // Tạo dữ liệu mới cho vẹt
         ParrotData parrotData = dataManager.createParrotData(owner.getUniqueId(), parrot.getUniqueId());
-        
+
         // Cập nhật tên hiển thị
         parrotData.updateNameTag(parrot);
-        
+
         owner.sendMessage(plugin.getConfigManager().getMessage("parrot_tamed"));
     }
 
@@ -47,7 +49,7 @@ public class EntityListener implements Listener {
 
         // Nếu vẹt không có trong dữ liệu của plugin, bỏ qua
         if (parrotData == null) return;
-        
+
         // Nếu người gây sát thương là một người chơi
         if (event.getDamager() instanceof Player) {
             Player damager = (Player) event.getDamager();
@@ -57,10 +59,8 @@ public class EntityListener implements Listener {
                 damager.sendMessage(ChatColor.RED + "Bạn không thể tấn công vẹt của người khác!");
             }
         } else {
-            // Nếu không phải người chơi (ví dụ: mob) tấn công vẹt của người khác
-             if (parrot.getOwner() != null && !parrot.getOwner().getUniqueId().equals(event.getDamager().getUniqueId())) {
-                // Có thể thêm logic bảo vệ ở đây nếu muốn
-             }
+            // Nếu không phải người chơi (ví dụ: mob) tấn công vẹt
+            // có thể thêm logic bảo vệ ở đây nếu muốn
         }
     }
 }
