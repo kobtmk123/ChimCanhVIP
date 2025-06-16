@@ -1,5 +1,8 @@
 package vn.been.chimcanh.commands;
 
+// --- DÒNG IMPORT ĐÃ ĐƯỢC THÊM VÀO ---
+import org.bukkit.ChatColor;
+// ------------------------------------
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,7 +28,7 @@ public class MainCommand implements CommandExecutor {
         }
 
         String subCommand = args[0].toLowerCase();
-        
+
         if (subCommand.equals("reload")) {
             if (!sender.hasPermission("chimcanh.admin.reload")) {
                 sender.sendMessage(configManager.getMessage("no_permission"));
@@ -43,20 +46,17 @@ public class MainCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        
+
         switch (subCommand) {
             case "list":
-                 sendHelp(player);
-                 break;
-            // Thêm các case khác cho các lệnh như thidau, editchim, etc.
-            // Ví dụ:
+                sendHelp(player);
+                break;
             case "thidau":
-                 // Logic thách đấu sẽ được gọi từ ChallengeManager ở đây
-                 player.sendMessage(ChatColor.YELLOW + "Tính năng thách đấu đang được phát triển!");
-                 break;
+                player.sendMessage(ChatColor.YELLOW + "Tính năng thách đấu đang được phát triển!");
+                break;
             default:
-                 player.sendMessage(ChatColor.RED + "Lệnh không hợp lệ. Dùng /chimcanh help để xem các lệnh.");
-                 break;
+                player.sendMessage(ChatColor.RED + "Lệnh không hợp lệ. Dùng /chimcanh help để xem các lệnh.");
+                break;
         }
 
         return true;
