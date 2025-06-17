@@ -3,11 +3,9 @@ package vn.been.chimcanh.data;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Parrot;
 import vn.been.chimcanh.model.ParrotLevel;
-
 import java.util.UUID;
 
 public class ParrotData {
-
     private final UUID parrotId;
     private UUID ownerId;
     private ParrotLevel level;
@@ -50,9 +48,7 @@ public class ParrotData {
     }
 
     public boolean feed(int amount) {
-        if (level.getNextLevel() == null) {
-            return false;
-        }
+        if (level.getNextLevel() == null) return false;
         this.seedsEatenInLevel += amount;
         if (this.seedsEatenInLevel >= level.getSeedsToUpgrade()) {
             levelUp();
@@ -75,24 +71,10 @@ public class ParrotData {
         parrot.setCustomNameVisible(true);
     }
 
-    // --- CÁC GETTERS & SETTERS ĐÃ ĐƯỢC THÊM VÀO ---
-    public UUID getParrotId() {
-        return parrotId;
-    }
-    public UUID getOwnerId() {
-        return ownerId;
-    }
-    public ParrotLevel getLevel() {
-        return level;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setOwnerId(UUID ownerId) {
-        this.ownerId = ownerId;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    // ---------------------------------------------
+    public UUID getParrotId() { return parrotId; }
+    public UUID getOwnerId() { return ownerId; }
+    public ParrotLevel getLevel() { return level; }
+    public String getDescription() { return description; }
+    public void setOwnerId(UUID ownerId) { this.ownerId = ownerId; }
+    public void setDescription(String description) { this.description = description; }
 }

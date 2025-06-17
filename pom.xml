@@ -50,12 +50,10 @@
     </build>
 
     <repositories>
-        <!-- Kho chứa cho Paper API -->
         <repository>
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-        <!-- KHO CHỨA CHÍNH THỨC CỦA VAULT - ĐÂY LÀ CHÌA KHÓA -->
         <repository>
             <id>vault-repo</id>
             <url>https://ci.ender.zone/plugin/repository/everything/</url>
@@ -63,15 +61,12 @@
     </repositories>
 
     <dependencies>
-        <!-- Thư viện Paper API -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- Khai báo Vault API đúng -->
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>

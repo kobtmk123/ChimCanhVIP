@@ -3,19 +3,17 @@
 # Để lấy item, dùng lệnh: /chimcanh item get <id>
 # <id> chính là tên của mục ở dưới (ví dụ: hat_ke, hat_huong_duong). ID phải là duy nhất.
 
-# Ví dụ về một loại hạt giống
 hat_ke:
-  material: "WHEAT_SEEDS" # Loại vật phẩm trong Minecraft. Xem ID tại: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
-  name: "&e&lHạt Kê Chim Cảnh" # Tên hiển thị của vật phẩm
-  lore: # Mô tả của vật phẩm, mỗi dòng là một gạch đầu dòng
+  material: "WHEAT_SEEDS"
+  name: "&e&lHạt Kê Chim Cảnh"
+  lore:
     - "&7Một loại thức ăn đặc biệt"
     - "&7dành cho những chú vẹt VIP."
-  enchantments: # Thêm hiệu ứng lấp lánh cho đẹp (tùy chọn)
-    - "DURABILITY:1" # Enchantment:Cấp độ. Tên enchant xem tại: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html
-  flags: # Các cờ để ẩn thông tin không cần thiết
-    - "HIDE_ENCHANTS" # Ẩn dòng enchant
+  enchantments:
+    - "DURABILITY:1"
+  flags:
+    - "HIDE_ENCHANTS"
 
-# Ví dụ về một loại hạt giống khác
 hat_huong_duong:
   material: "PUMPKIN_SEEDS"
   name: "&6&lHạt Hướng Dương Vàng"
@@ -28,4 +26,4 @@ hat_huong_duong:
     - "LUCK:1"
   flags:
     - "HIDE_ENCHANTS"
-    - "HIDE_ATTRIBUTES" # Ẩn các thông số tấn công/phòng thủ
+    - "HIDE_ATTRIBUTES"

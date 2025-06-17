@@ -1,8 +1,6 @@
 package vn.been.chimcanh.commands;
 
-// --- DÒNG IMPORT ĐÃ ĐƯỢC THÊM VÀO ---
 import org.bukkit.ChatColor;
-// ------------------------------------
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -58,7 +56,6 @@ public class MainCommand implements CommandExecutor {
                 player.sendMessage(ChatColor.RED + "Lệnh không hợp lệ. Dùng /chimcanh help để xem các lệnh.");
                 break;
         }
-
         return true;
     }
 
